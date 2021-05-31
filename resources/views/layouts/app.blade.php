@@ -1,184 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1">    
 
-    <meta property="og:title" content="MINPAES">
-    <meta property="og:description" content="Ministerio a las Naciones para Arrepentimiento y Santidad">
-    <meta property="og:site_name" content="Ministerio a las Naciones para Arrepentimiento y Santidad">
-    <meta property="og:image" itemprop="image" content="http://edqal.com/images/logo.png">
-    <meta property="og:image:secure_url" itemprop="image" content="http://edqal.com/images/logo.png">
-    <meta property="og:url" content="http://edqal.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:updated_time" content="1440432930" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Main CSS -->
-    <link href="dist/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/main.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Site Title -->
-    <title>@yield('title')</title>
-
-    <!-- Place Custom Favicon here -->
+    <title>@yield('title')</title> 
+    
+    <!-- Icon -->
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
 </head>
 
 <body>
 
-    <div class="page-loader">
-      <div class="loader"><img src="images/logo-sm.svg" alt=""></div>
-    </div>
+  <div class="intro">    
 
-    <!-- =================== SITE HEADER BEGINS ============================= -->
-
-    <header class="header transparent fixed light-text" data-onscroll-classes="dark-text white-bg"
-      data-onscroll-logo="images/logo-dark.png">
-
-      <div class="container">
-
-        <nav class="header__nav bottom-nav">
-
-          <div class="header__logo brand--logo">
-            <a href="./"><img src="images/logo-light.png" alt="MINPAES - Ministerio a las Naciones para Arrepentimiento y Santidad"></a>
-          </div>
-
-          <div class="header__mobile--opener hide-on-lg">
-            <button class="header__mobile--icon" aria-expanded="false" aria-controls="mobile-menu"
-              data-toggle="mobile-menu">
-              <span class="line"></span>
-              <span class="line"></span>
-              <span class="line"></span>
-            </button>
-          </div>
-
-          <ul class="header__navitems show-on-lg" id="mobile-menu">
-
-            <!-- Contains donation button for mobile and tablet devices -->
-            <div class="header__extra">
-              <div class="cta">
-                <a href="{{ url('registrooracion') }}" class="button button-block-sm">Petici&oacute;n de Oraci&oacute;n</a>
-              </div>
-            </div><!-- .header__extra ends -->
-
-            <li id="li-inicio" class="header__list active"><a href="./">Inicio</a></li>
-
-            <li id="li-nosotros" class="header__list"><a href="{{ url('nosotros') }}">Nosotros</a></li>
-
-            <li id="li-ensenanzas" class="header__list"><a href="{{ url('ensenanzas') }}">Ense&ntilde;anzas</a></li>
-
-            <li id="li-galeria" class="header__list"><a href="{{ url('galeria') }}">Galeria</a></li>
-
-            <li id="li-radio" class="header__list"><a href="{{ url('radio') }}">Radio</a></li>
-
-            <li id="li-registrocontacto" class="header__list"><a href="{{ url('registrocontacto') }}">Contacto</a></li>            
-
-          </ul><!-- .header__navitems ends -->
-
-          <!-- Contains Shopping cart and donation button -->
-          <div class="header__extra desktop-version">
-            <div class="cta hide-on-sm show-on-lg">
-              <a href="{{ url('registrooracion') }}" class="button">Petici&oacute;n de Oraci&oacute;n</a>
-            </div>
-          </div><!-- .header__extra ends -->
-
-        </nav><!-- .header__nav ends -->
-
-      </div><!-- .container ends -->
-
-    </header><!-- .header ends -->
-
+    <!-- =================== SITE HEADER BEGINS ============================= -->  
+      <header>
+            <h1 class="logo"><a href="#"><img src="images/logo-americalatina.png" alt="América Latina"></a></h1>
+            <input type="checkbox" name="menu" id="menu">
+            <label class="nav" for="menu"> 
+                <span></span> 
+            </label>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html" class="activo"><img src="images/ico-home.svg" alt="" /></a></li>
+                    <li><a href="#">Organización</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+                                <li><a href="mision-vision.html">Misión y visión</a></li>
+                                <li><a href="organigrama.html">Organigrama</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="traducciones.html">Traducciones</a></li>
+                    <li><a href="transmisiones.html">Transmisiones</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
     <!-- =================== SITE HEADER ENDS ============================= -->
     <!--
     ========================================================
                             CONTENT
     ========================================================
     -->
-    <main>
+    <div class="content">
 
       @yield('content')
-
-      @include('layouts.horariomap')
       
-    </main>
+    </div>
     <!-- =================== MAIN SECTION ENDS ============================= -->
+  
+  </div>
 
+  @include('layouts.maps')
 
-    <!-- SCROLL BACK TO TOP BEGINS -->
-    <div class="scroll-to-top"><i class="ri-arrow-up-line"></i></div>
-    <!-- SCROLL BACK TO TOP ENDS -->
+  <!-- =================== SITE FOOTER BEGINS ============================= -->
 
+  <footer class="footer text-center">
 
-    <!-- =================== SITE FOOTER BEGINS ============================= -->
+    @include('layouts.footer')
 
-    <footer class="footer">
+  </footer><!-- footer ends -->
 
-      <div class="container">
+  <!-- =================== SITE FOOTER ENDS ============================= -->
 
-        <div class="footer__top display-flex justify-align-center">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script> 
+  
+  <script src="dist/js/main.js"></script>
 
-          <div class="footer__logo">
-            <div class="logo-wrapper">
-              <img src="images/logo-sm.svg" alt="Small logo">
-            </div>
-          </div>
-
-        </div><!-- .footer__top ends -->
-
-        <div class="footer__bottom">
-
-          <div class="row align-items-center">
-
-            <div class="flex-md-6 flex-lg-4">
-
-              <div class="footer__info copyright">&copy; 2020 - MINPAES - Todos los derechos reservados</div>
-
-            </div><!-- .flex-* ends -->
-
-            <div class="flex-md-6 flex-lg-4">
-
-              <div class="footer__info credit">Web diseñada y desarrollada por MINPAES</div>
-
-            </div><!-- .flex-* ends -->
-
-            <div class="flex-md-6 flex-lg-4">
-              @include('layouts.footersocial')
-            </div><!-- .flex-* ends -->
-
-          </div><!-- .row ends -->
-
-        </div><!-- .footer__top ends -->
-
-      </div><!-- .container ends -->
-
-    </footer><!-- footer ends -->
-
-    <!-- =================== SITE FOOTER ENDS ============================= -->
-
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- loading in JQuery locally if CDN failed -->
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')</script>
-    <!-- Owl Carousel script -->
-    <script src="js/plugins/owl.carousel.js"></script>
-    <!-- JQuery Validator script -->
-    <script src="js/plugins/jquery.validate.js"></script>
-    <!-- JQuery Credit Card script -->
-    <script src="js/plugins/jquery.card.js"></script>
-    <!-- Animate On Scroll script -->
-    <script src="js/plugins/aos.js"></script>
-    <!-- Lightbox script -->
-    <script src="js/plugins/lightbox.min.js"></script>
-    <!-- Main (custom) script -->
-    <script src="dist/js/main.min.js"></script>
-
-    @include('layouts.pixelfacebookads')
-
-    @stack('scripts')
+  @stack('scripts')
 
 </body>
+
 </html>

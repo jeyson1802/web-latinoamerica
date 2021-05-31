@@ -1,7 +1,7 @@
 # For more information: https://laravel.com/docs/sail
 version: '3'
 services:
-    laravel.test:
+    web.latinoamerica:
         build:
             context: ./vendor/laravel/sail/runtimes/7.4
             dockerfile: Dockerfile
@@ -9,7 +9,7 @@ services:
                 WWWGROUP: '${WWWGROUP}'
         image: sail-8.0/app
         ports:
-            - '80'
+            - '8090:80'
         environment:
             WWWUSER: '${WWWUSER}'
             LARAVEL_SAIL: 1
@@ -30,7 +30,7 @@ services:
             MYSQL_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
         volumes:
-            - 'sailmysql:/var/lib/mysql'
+            - 'mysqllatinoamerica:/var/lib/mysql'
         networks:
             - sail
         healthcheck:
@@ -39,9 +39,5 @@ networks:
     sail:
         driver: bridge
 volumes:
-    sailmysql:
-        driver: local
-    sailredis:
-        driver: local
-    sailmeilisearch:
+    mysqllatinoamerica:
         driver: local

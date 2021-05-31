@@ -1,0 +1,22 @@
+<div class="barra-mapa">
+  <img src="images/banderas/peru.png" />
+  <img src="images/banderas/venezuela.png" />
+  <img src="images/banderas/colombia.png" />
+  <img src="images/banderas/costarica.png" />
+  <img src="images/banderas/puerto-rico.png" />
+  <img src="images/banderas/mexico.png" />
+  <img src="images/banderas/nicaragua.png" />
+  <img src="images/banderas/chile.png" />
+  <img src="images/banderas/honduras.png" />
+  <img src="images/banderas/panama.png" />
+  <img src="images/banderas/cuba.png" />
+  <img src="images/banderas/guatemala.png" />
+  <img src="images/banderas/paraguay.png" />
+  <img src="images/banderas/bolivia.png" />
+  <img src="images/banderas/uruguay.png" />
+  <img src="images/banderas/rep-dominicana.png" />
+  <img src="images/banderas/elsalvador.png" />
+  <img src="images/banderas/argentina.png" />
+  <img src="images/banderas/ecuador.png" />
+  <img src="images/banderas/guinea-ecuatorial.png" />
+</div>
